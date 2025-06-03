@@ -36,7 +36,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
     });
 
     // Send confirmation email
-    await emailjs.send("your_service_id", "your_template_id", {
+    await emailjs.send("service_8kr7wvx", "template_s9x70vz", {
       name: name,
       email: email
     });
