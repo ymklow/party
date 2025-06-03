@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- index.html HEAD tag: add EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("your_public_key"); // replace this
+  })();
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room Party Invite</title>
+  <title>Room Party Signup</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-  <script defer src="script.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>You're Invited!</h1>
-<form id="signup-form">
-  <input type="text" id="name" placeholder="Full Name" required />
-  <input type="text" id="studentID" placeholder="Student ID (8 digits)" required />
-  <input type="text" id="roomNumber" placeholder="Room Number (4 digits)" required />
-  <input type="email" id="email" placeholder="Email Address" required />
-  <button type="submit">Sign Up</button>
-  <p id="status"></p>
-</form>
+    <div class="form-wrapper">
+      <h1>You're Invited 🎉</h1>
+      <p>Fill in your details to join the party</p>
+      <form id="signup-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="text" name="studentID" placeholder="Student ID (8 digits)" pattern="\d{8}" required />
+        <input type="text" name="room" placeholder="Room Number (4 digits)" pattern="\d{4}" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
+    <div class="image-wrapper">
+      <img src="party-image.png" alt="Party Vibes" />
+    </div>
   </div>
 
   <footer>
-    <h3>Roommates Info</h3>
+    <h3>Room Hosts</h3>
     <ul>
-      <li><strong>Skylow</strong> - sky1low4@gmail.com</li>
-      <li><strong>Pesewas</strong> - Edwardowusu0591084240@gmail.com</li>
-      <li><strong>Lebron</strong> -essiamgorden20@gmail.com </li>
-      <li><strong>Ramzy</strong> - --</li>
+      <li>SkyLow - sky1low4@gmail.com</li>
+      <li>Jay - 024XXXXXXX</li>
+      <li>Kwame - 055XXXXXXX</li>
+      <li>Theo - 020XXXXXXX</li>
     </ul>
   </footer>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  emailjs.init("hjHRKyMjQt1F5GRtm");
-</script>
-<script type="module" src="script.js"></script>
 
+  <script src="app.js"></script>
 </body>
 </html>
