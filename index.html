@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room Party Invite</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>You're Invited!</h1>
+    <form id="inviteForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="text" id="studentId" placeholder="Student ID (8 digits)" pattern="\d{8}" required />
+      <input type="text" id="roomNumber" placeholder="Room Number (4 digits)" pattern="\d{4}" required />
+      <input type="email" id="email" placeholder="Personal Email" required />
+      <button type="submit">Confirm Attendance</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <footer>
+    <h3>Roommates Info</h3>
+    <ul>
+      <li><strong>Ernest Akonor</strong> - sky1low4@gmail.com</li>
+      <li><strong>Roommate 2</strong> - roommate2@example.com</li>
+      <li><strong>Roommate 3</strong> - roommate3@example.com</li>
+      <li><strong>Roommate 4</strong> - roommate4@example.com</li>
+    </ul>
+  </footer>
+</body>
+</html>
