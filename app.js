@@ -15,8 +15,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-// Initialize EmailJS (Replace 'YOUR_PUBLIC_KEY' with your actual public key)
-emailjs.init("hjHRKyMjQt1F5GRtm");
 
 // Form submit
 document.getElementById("signup-form").addEventListener("submit", async function (e) {
