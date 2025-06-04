@@ -15,6 +15,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// Initialize EmailJS (Replace 'YOUR_PUBLIC_KEY' with your actual public key)
+emailjs.init("hjHRKyMjQt1F5GRtm");
 
 // Form submit
 document.getElementById("signup-form").addEventListener("submit", async function (e) {
@@ -34,16 +36,29 @@ document.getElementById("signup-form").addEventListener("submit", async function
       email,
       timestamp: new Date()
     });
+  
+  console.log("Data saved to Firebase successfully");
 
     // Send confirmation email
-    emailjs.send("service_8kr7wvx", "template_s9x70vz", {
-  name: name,
-  email: email
-}).then(response => {
-  console.log("Email sent:", response);
-  alert("Signup successful! Confirmation email sent.");
-  e.target.reset();
-}).catch(error => {
-  console.error("Email failed:", error);
-  alert("Signup successful, but email failed.");
+    
+     try {
+      const response = await emailjs.send("service_8kr7wvx", "template_s9x70vz", {
+        name: name,
+        email: email,
+        to_email: email // Make sure your template uses this variable
+      });
+      
+      console.log("Email sent successfully:", response);
+      alert("Signup successful! Confirmation email sent.");
+      e.target.reset();
+      
+    } catch (emailError) {
+      console.error("Email failed:", emailError);
+      alert("Signup successful, but confirmation email failed to send.");
+    }
+    
+  } catch (firebaseError) {
+    console.error("Firebase error:", firebaseError);
+    alert("Signup failed. Please try again.");
+  }
 });
