@@ -43,7 +43,7 @@ document.getElementById("signup-form").addEventListener("submit", async function
       const response = await emailjs.send("service_8kr7wvx", "template_s9x70vz", {
         name: name,
         email: email,
-        email: email // Make sure your template uses this variable
+      
       });
       
       console.log("Email sent successfully:", response);
