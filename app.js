@@ -36,15 +36,14 @@ document.getElementById("signup-form").addEventListener("submit", async function
     });
 
     // Send confirmation email
-    await emailjs.send("service_8kr7wvx", "template_s9x70vz", {
-      name: name,
-      email: email
-    });
-
-    alert("Signup successful! Confirmation email sent.");
-    e.target.reset();
-  } catch (err) {
-    console.error("Error:", err);
-    alert("Something went wrong.");
-  }
+    emailjs.send("service_8kr7wvx", "template_s9x70vz", {
+  name: name,
+  email: email
+}).then(response => {
+  console.log("Email sent:", response);
+  alert("Signup successful! Confirmation email sent.");
+  e.target.reset();
+}).catch(error => {
+  console.error("Email failed:", error);
+  alert("Signup successful, but email failed.");
 });
