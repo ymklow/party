@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- index.html HEAD tag: add EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("hjHRKyMjQt1F5GRtm"); // replace this
-  })();
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      (function () {
+        emailjs.init("hjHRKyMjQt1F5GRtm"); // replace this
+      })();
+    </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Room Party Signup</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <div class="form-wrapper">
-      <h1>You're Invited 🎉</h1>
-      <p>Fill in your details to join the party</p>
-      <form id="signup-form">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="text" name="studentID" placeholder="Student ID (8 digits)" pattern="\d{8}" required />
-        <input type="text" name="room" placeholder="Room Number (4 digits)" pattern="\d{4}" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <button type="submit">Submit</button>
-      </form>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Party Signup</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <h1>You're Invited 🎉</h1>
+        <p>Fill in your details to join the party</p>
+        <form id="signup-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input
+            type="text"
+            name="studentID"
+            placeholder="Student ID (8 digits)"
+            pattern="\d{8}"
+            required
+          />
+          <input
+            type="text"
+            name="room"
+            placeholder="Room Number (4 digits)"
+            pattern="\d{4}"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <button type="submit" id="submit-btn">
+            <span class="btn-text"> Submit</span>
+            <span class="spinner"></span>
+        </button>
+        </form>
+      </div>
+
+      <div class="image-wrapper">
+        <img src="party-image.jpeg" alt="Party Vibes" />
+      </div>
     </div>
 
-    <div class="image-wrapper">
-      <img src="party-image.png" alt="Party Vibes" />
-    </div>
-  </div>
+    <footer>
+      <h3>Room Hosts</h3>
+      <ul>
+        <li>SkyLow </li>
+        <li>Pesewas</li>
+        <li>LeBron</li>
+        <li>Ramzy</li>
+      </ul>
+    </footer>
 
-  <footer>
-    <h3>Room Hosts</h3>
-    <ul>
-      <li>SkyLow - sky1low4@gmail.com</li>
-      <li>Jay - 024XXXXXXX</li>
-      <li>Kwame - 055XXXXXXX</li>
-      <li>Theo - 020XXXXXXX</li>
-    </ul>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+    <script type="module" src="app.js"></script>
+  </body>
 </html>
